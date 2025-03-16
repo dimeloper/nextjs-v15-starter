@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { query: string };
+  searchParams: Promise<{ query: string }>;
 }) {
   const params = await searchParams;
 

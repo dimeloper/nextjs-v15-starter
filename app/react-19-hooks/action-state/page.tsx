@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useActionState } from 'react';
+import { useActionState } from "react";
 
 // This would typically be in a separate file
 const submitActionWithCurrentState = async (
   prevState: any,
-  formData: FormData
+  formData: FormData,
 ) => {
-  const username = formData.get('username') as string;
-  const age = Number(formData.get('age'));
+  const username = formData.get("username") as string;
+  const age = Number(formData.get("age"));
 
   // Simulate server delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   if (prevState.users.some((user: any) => user.username === username)) {
     return { ...prevState, error: `User "${username}" already exists` };

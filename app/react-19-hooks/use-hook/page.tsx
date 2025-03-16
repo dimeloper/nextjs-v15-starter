@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { use } from 'react';
+import { useState } from "react";
+import { use } from "react";
 
 // This would typically be in a separate file
 const fetchData = async () => {
   // Simulate server delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  return 'Data fetched successfully!';
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return "Data fetched successfully!";
 };
 
 const DataContainer = ({ dataPromise }: { dataPromise: Promise<string> }) => {
