@@ -75,6 +75,13 @@ The project includes the following examples:
 4. **useOptimistic**: Shows optimistic updates in the UI before server confirmation.
 
    - URL: `/react-19-hooks/use-optimistic`
+   - Features:
+     - Real-time optimistic UI updates
+     - Title history tracking with timestamps
+     - Error handling and validation
+     - Loading states and animations
+     - Dark mode support
+     - Responsive design
 
 5. **use**: Illustrates data fetching with the `use` hook.
 
@@ -88,6 +95,42 @@ The project includes the following examples:
 - Next.js 15 Form Component
 - Async SearchParams
 - React 19 Hooks: useActionState, useOptimistic, use, useFormStatus
+- Tailwind CSS for styling
+- Dark mode support
+- Responsive design
+
+## Code Quality and Development
+
+### Linting and Formatting
+
+This project uses ESLint and Prettier for code quality and formatting. The setup includes:
+
+- Pre-commit hooks using Husky
+- Automatic formatting of staged files using lint-staged
+- ESLint for TypeScript/JavaScript linting
+- Prettier for consistent code formatting
+
+Available scripts:
+
+- `yarn lint` - Run ESLint
+- `yarn format` - Format all files using Prettier
+- `yarn format:check` - Check if files are formatted correctly
+
+Configuration files:
+
+- `.eslintrc.json` - ESLint configuration
+- `.prettierrc` - Prettier configuration with:
+  - Single quotes
+  - 2-space indentation
+  - 100 character line length
+  - ES5 trailing commas
+  - And more best practices
+
+Pre-commit hooks ensure that:
+
+- All staged TypeScript/JavaScript files are linted and formatted
+- All staged JSON/Markdown files are properly formatted
+- Code meets the project's quality standards before being committed
 
 ## Learn More
 
@@ -102,18 +145,3 @@ To learn more about Next.js and React, take a look at the following resources:
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Linting and Formatting
-
-This project uses ESLint and Prettier for code quality and formatting. The setup includes:
-
-- Pre-commit hooks using Husky
-- Automatic formatting of staged files
-- Linting checks before commits
-- Consistent code style across the project
-
-To manually run the checks:
-
-- `yarn lint` - Run ESLint
-- `yarn format` - Format all files
-- `yarn format:check` - Check if files are formatted correctly
