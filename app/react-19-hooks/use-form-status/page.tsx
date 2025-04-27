@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useFormStatus } from "react-dom";
+import { useFormStatus } from 'react-dom';
 
 // This would typically be in a separate file
 const submitAction = async () => {
   // Simulate server delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 2000));
 };
 
 const Form = () => {
@@ -21,16 +21,14 @@ const Form = () => {
       />
       <button
         className={`text-white px-4 py-2 rounded-md transition duration-300 ease-in-out ${
-          pending ? "bg-red-500" : "bg-blue-500 hover:bg-blue-600"
+          pending ? 'bg-red-500' : 'bg-blue-500 hover:bg-blue-600'
         }`}
         disabled={pending}
         type="submit"
       >
         Submit
       </button>
-      {pending && (
-        <p className="mt-2">Submitting {data?.get("username") as string}...</p>
-      )}
+      {pending && <p className="mt-2">Submitting {data?.get('username') as string}...</p>}
     </div>
   );
 };
