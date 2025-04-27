@@ -29,6 +29,8 @@ The project is organized as follows:
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx
+│   ├── components/
+│   │   └── FooterLink.tsx
 │   ├── form-showcase/
 │   │   └── page.tsx
 │   ├── search/
@@ -55,6 +57,40 @@ The project is organized as follows:
 ├── tailwind.config.ts
 └── tsconfig.json
 ```
+
+## Testing
+
+The project uses Vitest for testing React components. Tests are automatically run on pull requests and pushes to the main branch.
+
+### Running Tests
+
+To run tests in watch mode (development):
+
+```bash
+yarn test
+```
+
+To run tests once with coverage:
+
+```bash
+yarn test:coverage
+```
+
+### Test Structure
+
+Tests are co-located with their components in the `app/components` directory. For example:
+
+- `app/components/FooterLink.tsx`
+- `app/components/FooterLink.test.tsx`
+
+### CI/CD
+
+Tests are automatically run in GitHub Actions on:
+
+- Pull requests targeting the main branch
+- Direct pushes to the main branch
+
+Coverage reports are generated and uploaded as artifacts in the GitHub Actions UI.
 
 ## Examples
 
