@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useOptimistic, useState } from 'react';
+import { useOptimistic, useState } from "react";
 
 // This would typically be in a separate file
 const submitTitle = async (formData: FormData) => {
   // Simulate server delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  const newTitle = formData.get('title') as string;
-  if (newTitle === 'error') {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const newTitle = formData.get("title") as string;
+  if (newTitle === "error") {
     throw new Error('Title cannot be "error"');
   }
   return newTitle;
 };
 
 export default function OptimisticComponent() {
-  const [title, setTitle] = useState('Title');
+  const [title, setTitle] = useState("Title");
   const [optimisticTitle, setOptimisticTitle] = useOptimistic(title);
   const [error, setError] = useState<string | null>(null);
   const pending = title !== optimisticTitle;
 
   const handleSubmit = async (formData: FormData) => {
     setError(null);
-    setOptimisticTitle(formData.get('title') as string);
+    setOptimisticTitle(formData.get("title") as string);
     try {
       const updatedTitle = await submitTitle(formData);
       setTitle(updatedTitle);
@@ -34,7 +34,7 @@ export default function OptimisticComponent() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">useOptimistic Example</h1>
       <h2 className="text-xl mb-2">{optimisticTitle}</h2>
-      <p className="mb-2"> {pending && 'Updating...'} </p>
+      <p className="mb-2"> {pending && "Updating..."} </p>
       <form action={handleSubmit} className="mb-4">
         <input
           type="text"
