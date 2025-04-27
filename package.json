@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "node .husky/install.mjs"
+    "prepare": "node .husky/install.mjs",
+    "tsc": "tsc"
   },
   "dependencies": {
     "next": "15.3.1",
